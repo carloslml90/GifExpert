@@ -1,6 +1,6 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(139, 33, 209);
   }
   
   body {
@@ -18,9 +18,14 @@
     width: 100%;
   }
   
-  h2 {
+  h2,h1 {
     font-size: 1.5rem;
+    text-align: center;
+    border-bottom: black 0.5em dashed;
+    padding: 1em 1em;
   }
+
+  button{color: white; background-color: red; border-radius: 1em;}
   
   h3 {
     font-size: 3rem;
