@@ -8,10 +8,10 @@ import { AddCategory } from "./Components/AddCategory"
 export const GifExpert=()=>{
 
 const [categories,setCategories]=useState(['Breaking bad', 'Arkhane']);
-const onAddCategory=()=>{
+/*const onAddCategory=()=>{
 setCategories([...categories, 'Ozark'])
 
-} 
+} */
 console.log (categories);
 
         return(
@@ -23,12 +23,12 @@ console.log (categories);
                   {/*Innput */}
 
                   <AddCategory setCategories={setCategories}/>
-                  
-                  <button onClick={onAddCategory}> Add </button>
+
+           
                   {/*Categorie list */}
 
                   <ol>
-                    {categories.map(category=>{return <li key={category}>{category}</li>})}
+                    {categories.map(category =>{return <li key={category}>{category}</li>})}
                   </ol>
 
 
