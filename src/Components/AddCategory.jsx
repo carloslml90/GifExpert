@@ -1,29 +1,34 @@
 import { useState } from "react";
 
-export const AddCategory=({setCategories})=> {
 
-    const [inputValue, SetInputValue] =useState('');
+export const AddCategory=()=>{
+
+    const [inputValue,setInputValue]=useState('Ozark ')
+    console.log(inputValue);
+        const onInputChange=(event) =>{
+        setInputValue(event.target.value)
+    }
+
+        const onSubmit =(event)=>{
+            event.preventDefault();
+            console.log(inputValue);
 
 
-            const setInputChange=({target})=>{
-             console.log(target.value);
-            SetInputValue(target.value);
-}
-const onSubmit=(event)=> {
-    event.preventDefault();//this is used to evite console refresh after each input entry
-    if(inputValue.trim().length<=4 ) return;
-    setCategories(categories =>[inputValue, ...categories])
+        }
 
-}
+                return(
 
-return(
+                    <form  onSubmit={(event)=>onSubmit(event)}>
 
-    <form onSubmit={(event)=>onSubmit(event)} >
-<input 
-type="text"
-placeholder="Buscar Gifs"
-value={inputValue}
-onChange={setInputChange}/>
-</form>)
+                        <input
+                        type="text"
+                        value={inputValue}
+                        placeholder="looking for a serie"
+                        onChange={(event)=>onInputChange(event)}
 
-}
+                        />
+                    </form>
+
+                )
+
+} 

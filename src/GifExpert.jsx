@@ -4,39 +4,35 @@ import { AddCategory } from "./Components/AddCategory"
 
 
 
+
 export const GifExpert=()=>{
-    const [categories, setCategories]=useState(['Dragon Ball'])
 
-    console.log(categories)
+const [categories,setCategories]=useState(['Breaking bad', 'Arkhane']);
+const onAddCategory=()=>{
+setCategories([...categories, 'Ozark'])
 
-const onAddCategory=(newCategory)=>{
-    if(categories.includes(newCategory)) return;
-   
- setCategories([newCategory,...categories])}
- 
-return(
+} 
+console.log (categories);
 
-<>
-{/*tittle*/ }
+        return(
+             <>
 
-<h1>Gif Expert </h1>
+                 {/*title */}
+                <h1>Gif Expert </h1>
+
+                  {/*Innput */}
+
+                  <AddCategory setCategories={setCategories}/>
+                  
+                  <button onClick={onAddCategory}> Add </button>
+                  {/*Categorie list */}
+
+                  <ol>
+                    {categories.map(category=>{return <li key={category}>{category}</li>})}
+                  </ol>
 
 
-{/*imput*/}
-<AddCategory 
-//onNewCategory={(event=>onAddCategory(event))}
-setCategories={setCategories}
-
-/>
-
-
-<button onClick={onAddCategory}> Add categorie</button>
-
-<ol>
-{
-    categories.map(category =>{ return <li key={category}>{category}</li>})
+                </>
+        ) 
 
 }
-</ol>
-</>
-)}
