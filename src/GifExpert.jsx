@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { AddCategory } from "./Components/AddCategory"
+import { GifGrid } from "./Components/GifGrid";
 
 
 
@@ -7,11 +8,14 @@ import { AddCategory } from "./Components/AddCategory"
 
 export const GifExpert=()=>{
 
-const [categories,setCategories]=useState(['Breaking bad', 'Arkhane']);
-/*const onAddCategory=()=>{
-setCategories([...categories, 'Ozark'])
+const [categories,setCategories]=useState(['Breaking bad']);
 
-} */
+
+
+const onAddCategory=(newCategory)=>{
+  if (categories.includes(newCategory)) return;
+setCategories([newCategory,...categories])
+} 
 console.log (categories);
 
         return(
@@ -22,14 +26,28 @@ console.log (categories);
 
                   {/*Innput */}
 
-                  <AddCategory setCategories={setCategories}/>
+                  <AddCategory
+                  
+                  //setCategories={setCategories}
+                  
+                  onNewCategory={(event)=>onAddCategory(event)}
+                  />
 
            
-                  {/*Categorie list */}
+              
+                    {
+                    
+                      categories.map((category) =>(
+                        <GifGrid key={category}
+                        category={category}
+                     
+                        />
+                    ))
+                    
+                    }
 
-                  <ol>
-                    {categories.map(category =>{return <li key={category}>{category}</li>})}
-                  </ol>
+                    
+                  
 
 
                 </>

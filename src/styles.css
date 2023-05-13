@@ -1,11 +1,14 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: rgb(139, 33, 209);
+    background-color: rgb(189, 184, 201);
   }
   
   body {
     padding: 60px;
   }
+  
+
+
   
   input {
     background-color: white;
@@ -16,16 +19,23 @@
     outline: none;
     padding: 10px 15px;
     width: 100%;
+    
   }
   
   h2,h1 {
     font-size: 1.5rem;
     text-align: center;
-    border-bottom: black 0.5em dashed;
+    border-bottom: black 0.5em double;
     padding: 1em 1em;
   }
 
-  button{color: white; background-color: red; border-radius: 1em; width: 10em; height: 2em; margin-top: 2em;}
+  button{
+    color: white; 
+    background-color: rgba(5, 5, 5, 0.959); 
+    border-radius: 1em; 
+    width: 10em; 
+    height: 2em; 
+    margin-top: 2em;}
   
   h3 {
     font-size: 3rem;
@@ -36,7 +46,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:left;
   }
   
   .card {
