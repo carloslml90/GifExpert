@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { AddCategory } from "./Components/AddCategory"
-import { GifGrid } from "./Components/GifGrid";
+import { AddCategory, GifGrid } from "./Components"
+
 
 
 
@@ -11,20 +11,23 @@ export const GifExpert=()=>{
 const [categories,setCategories]=useState(['Breaking bad']);
 
 
+//This function write in my input a new category to submit
+        const onAddCategory=(newCategory)=>{
+          if (categories.includes(newCategory)) return;
+        setCategories([newCategory,...categories])
+        } 
 
-const onAddCategory=(newCategory)=>{
-  if (categories.includes(newCategory)) return;
-setCategories([newCategory,...categories])
-} 
+
+
 console.log (categories);
 
         return(
              <>
 
                  {/*title */}
-                <h1>Gif Expert </h1>
+                <h1>Gifs Expert </h1>
 
-                  {/*Innput */}
+                  {/*Input */}
 
                   <AddCategory
                   
@@ -37,7 +40,10 @@ console.log (categories);
               
                     {
                     
+
                       categories.map((category) =>(
+
+
                         <GifGrid key={category}
                         category={category}
                      

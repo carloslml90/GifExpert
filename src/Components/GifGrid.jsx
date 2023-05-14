@@ -1,33 +1,30 @@
-import { useState, useEffect} from "react";
-import { GifItem } from "./GifItem";
-import { GetGifs } from "../Helpers/Getgifs";
 
-   
+import { GifItem } from "./GifItem";
+
+import Proptypes from "prop-types"
+import { useFetchGifs } from "../Hooks/useFetchHook";
+
+
+
+
 export const GifGrid=({category})=>{
 
-
-    const [images,setImages]=useState([])
-
-
-
-    const getImages=async()=>{
-        const newImages =await GetGifs(category);
-        setImages(newImages)
-    }
-
-    useEffect( () =>{
+const {images, isLoading }=useFetchGifs(category);
+console.log({isLoading});
 
 
-getImages();
 
-    
-    }, [])
+
 
     return(
         <>
 
-
+ 
     <h3>{category}</h3>
+
+    {
+    isLoading && (<h2>cargando...</h2>)
+    }
 
        <div className="card-grid">
 
@@ -49,3 +46,8 @@ getImages();
 
 
 } 
+
+GifGrid.propTypes={
+category: Proptypes.string.isRequired,
+
+}

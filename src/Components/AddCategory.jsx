@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Proptypes from 'prop-types';
+
 
 
 export const AddCategory=({onNewCategory})=>{
@@ -27,7 +29,7 @@ export const AddCategory=({onNewCategory})=>{
                         <input
                         type="text"
                         value={inputValue}
-                        placeholder="looking for a serie"
+                        placeholder="Looking for a serie"
                         onChange={(event)=>onInputChange(event)}
 
                         />
@@ -36,3 +38,9 @@ export const AddCategory=({onNewCategory})=>{
                 )
 
 } 
+
+AddCategory.propTypes= {
+
+   onNewCategory: Proptypes.func,
+
+}
