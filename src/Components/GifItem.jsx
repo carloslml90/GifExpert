@@ -24,6 +24,6 @@ return(
 GifItem.propTypes={
 id:PropTypes.string.isRequired,
 title: PropTypes.string.isRequired,
-url:PropTypes.string.isRequired,
+url:PropTypes.string,
 
 }

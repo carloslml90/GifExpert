@@ -20,7 +20,7 @@ console.log({isLoading});
         <>
 
  
-    <h3>{category}</h3>
+    <h3>{category}</h3><br /><br />
 
     {
     isLoading && (<h2>cargando...</h2>)
