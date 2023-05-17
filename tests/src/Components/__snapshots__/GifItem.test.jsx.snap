@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`To prove our test suite Making matching with snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Improving every day"
+      src="https://www.saitama.com/saitama.jpg"
+    />
+    <p>
+      Improving every day
+    </p>
+  </div>
+</div>
+`;

@@ -24,14 +24,14 @@ export const AddCategory=({onNewCategory})=>{
                 return(
                 
                 
-                    <form  onSubmit={(event)=>onSubmit(event)}>
+                    <form  onSubmit={(event)=>onSubmit(event)} aria-label="form">
 
                         <input
                         type="text"
                         value={inputValue}
                         placeholder="Looking for a serie"
                         onChange={(event)=>onInputChange(event)}
-
+                        
                         />
                     </form>
                 
