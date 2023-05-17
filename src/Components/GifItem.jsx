@@ -10,7 +10,7 @@ return(
 <div className="card">
 
 <img src={url} alt={title} />
-<p>{title}</p>
+<p id="title-img">{title}</p>
 
 </div>
 
